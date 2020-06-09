@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable =no"/>
 		<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="All_Sites_neu.css" type="text/css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <title>Warenkorb</title>
     </head>
     <body>
@@ -64,23 +65,23 @@
             <div class="Box_2">
                 <h1 class="Ueberschriften_Warenkorb">Zahlungsart</h1>
                 <div class="mitte">
-                    <a href="http://Paypal.com" target="_blank">  
-                    <input type="zahlen" formaction="http://stackoverflow.com" value="Paypal" />
+                    <!-- <a href="http://Paypal.com" target="_blank">   -->
+                    <input id="addPaypal" type="zahlen" value="Paypal" />
                     </a> 
                 </div>
                 <div class="mitte">
-                    <a href="https://www.americanexpress.com" target="_blank">
-                    <input type="zahlen" value="Kreditkarte" />
+                    <!-- <a href="https://www.americanexpress.com" target="_blank"> -->
+                    <input id="addKredit" type="zahlen" value="Kreditkarte">
                     </a>
                 </div>
                 <div class="mitte">
-                    <a href="https://www.klarna.com" target="blank">
-                    <input type="zahlen" value="Rechnung" />
+                    <!-- <a href="https://www.klarna.com" target="blank"> -->
+                    <input id="addRechnung" type="zahlen" value="Rechnung" />
                     </a>
                 </div>
                 <div class="mitte">
-                    <a href="https://www.coinbase.com/" target="blank" >
-                    <input type="zahlen" value="Bitcoin" />
+                    <!-- <a href="https://www.coinbase.com/" target="blank" > -->
+                    <input id="addBitcoin" type="zahlen" value="Bitcoin" />
                     </a>
                 </div>
 
@@ -99,6 +100,81 @@
                 <div class="mitte_unten_unten">
                     <input type="zahlen" value="Kaufen" />
                 </div>
+                <script>
+                $("#addKredit").click(function() {
+                    console.log("button addKredit clicked");
+                    
+                    var obj = { "bezeichnung": "Kreditkarte"};
+                    
+                    $.ajax({
+                        url: "http://localhost:8000/api/zahlungsart",
+                        method: "post",
+                        contentType: "application/json",
+                        data: JSON.stringify(obj)
+                    }).done(function (response) {
+                        console.log(response);
+                        $("#output").html(JSON.stringify(response));
+                    }).fail(function (jqXHR, statusText, error) {
+                        console.log("Response Code: " + jqXHR.status + " - Fehlermeldung: " + jqXHR.responseText);
+                        $("#output").html("Ein Fehler ist aufgetreten");
+                    });
+                });
+
+                $("#addRechnung").click(function() {
+                    console.log("button addRechnung clicked");
+                    
+                    var obj = { "bezeichnung": "Klarna/Rechnung"};
+                    
+                    $.ajax({
+                        url: "http://localhost:8000/api/zahlungsart",
+                        method: "post",
+                        contentType: "application/json",
+                        data: JSON.stringify(obj)
+                    }).done(function (response) {
+                        console.log(response);
+                        $("#output").html(JSON.stringify(response));
+                    }).fail(function (jqXHR, statusText, error) {
+                        console.log("Response Code: " + jqXHR.status + " - Fehlermeldung: " + jqXHR.responseText);
+                        $("#output").html("Ein Fehler ist aufgetreten");
+                    });
+                });
+                $("#addPaypal").click(function() {
+                    console.log("button addPaypal clicked");
+                    
+                    var obj = { "bezeichnung": "Paypal"};
+                    
+                    $.ajax({
+                        url: "http://localhost:8000/api/zahlungsart",
+                        method: "post",
+                        contentType: "application/json",
+                        data: JSON.stringify(obj)
+                    }).done(function (response) {
+                        console.log(response);
+                        $("#output").html(JSON.stringify(response));
+                    }).fail(function (jqXHR, statusText, error) {
+                        console.log("Response Code: " + jqXHR.status + " - Fehlermeldung: " + jqXHR.responseText);
+                        $("#output").html("Ein Fehler ist aufgetreten");
+                    });
+                });
+                $("#addBitcoin").click(function() {
+                    console.log("button addBitcoin clicked");
+                    
+                    var obj = { "bezeichnung": "Bitcoin"};
+                    
+                    $.ajax({
+                        url: "http://localhost:8000/api/zahlungsart",
+                        method: "post",
+                        contentType: "application/json",
+                        data: JSON.stringify(obj)
+                    }).done(function (response) {
+                        console.log(response);
+                        $("#output").html(JSON.stringify(response));
+                    }).fail(function (jqXHR, statusText, error) {
+                        console.log("Response Code: " + jqXHR.status + " - Fehlermeldung: " + jqXHR.responseText);
+                        $("#output").html("Ein Fehler ist aufgetreten");
+                    });
+                });
+                </script>
             </div>
             </div>
         </div>        

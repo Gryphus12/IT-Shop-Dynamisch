@@ -18,7 +18,7 @@ serviceRouter.get("/adresse/gib/:id", function(request, response) {
 });
 
 serviceRouter.get("/adresse/alle", function(request, response) {
-    helper.log("Service Adresse: Client requested all records");
+    helper.log("Service Adresse: Client requested all records");s
 
     const adresseDao = new AdresseDao(request.app.locals.dbConnection);
     try {

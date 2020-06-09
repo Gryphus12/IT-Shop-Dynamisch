@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable =no"/>
 		<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="All_Sites_neu.css" type="text/css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <title>Kontakt</title>
     </head>
     <body>
@@ -50,9 +51,31 @@
                             <textarea id="nachricht" name="nachricht" cols="30" rows="5"></textarea>
                         </div>
                         <div>
-                            <input class="rechts" type="submit" value="Abschicken" />
+                            <button id="addtax" class="rechts">Abschicken</button>
+                            <b>Ergebnis:</b><br><br>
+				            <div id="output"></div>
                         </div>
                     </div>
+                    <script>
+                        $("#addtax").click(function() {
+                        console.log("button addtax clicked");
+                        
+                        var obj = { "bezeichnung": "Sondersteuer", "steuersatz": 24.5 };
+                        
+                        $.ajax({
+                            url: "http://localhost:8000/api/mehrwertsteuer",
+                            method: "post",
+                            contentType: "application/json",
+                            data: JSON.stringify(obj)
+                        }).done(function (response) {
+                            console.log(response);
+                            $("#output").html(JSON.stringify(response));
+                        }).fail(function (jqXHR, statusText, error) {
+                            console.log("Response Code: " + jqXHR.status + " - Fehlermeldung: " + jqXHR.responseText);
+                            $("#output").html("Ein Fehler ist aufgetreten");
+                        });
+                    });
+                    </script>
 
                     </form>
             </div>

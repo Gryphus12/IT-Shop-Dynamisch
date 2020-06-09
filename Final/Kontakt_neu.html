@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="All_Sites_neu.css" type="text/css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="http://cdnjs.cloudfare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
         <title>Kontakt</title>
     </head>
     <body>
@@ -32,9 +31,9 @@
                 <a href="About.html" target="blank">About</a>                
                 <a href="Warenkorb_neu.html" target="blank">Warenkorb(1)</a>        
             </nav>
-            <div class="content formular">
+            <div class="content">
                 <h1 class="Kontakt_Text">KONTAKTIEREN SIE UNS</h1>
-                    <form class="Formular_Text" id="kontaktformular" name="kontaktformular" onsubmit="postAddress(); return false">
+                    <form class="Formular_Text" id="kontaktformular" name="kontaktformular" action="">
                         
                     <div class="Container_Kontakt">
 
@@ -52,36 +51,32 @@
                             <textarea id="nachricht" name="nachricht" cols="30" rows="5"></textarea>
                         </div>
                         <div>
-                            <button id="sendbtn" class="rechts" type="submit">Abschicken</button>
-                            <b>Ergebnis:</b><br><br>
-				            <div id="output"></div>
+                            <input id="addall" class="rechts" type="submit" value="Abschicken" />
                         </div>
                     </div>
-                    <!-- <script>
-                        $("#sendbtn").click(function() {
-                        console.log("button addtax clicked");
-                        
-                        var obj = { "name": "Sondersteuer", "email": 24.5, "nachricht": "hallo" };
-                        
-                        $.ajax({
-                            url: "http://localhost:8000/api/formular",
-                            method: "post",
-                            contentType: "application/json",
-                            data: JSON.stringify(obj)
-                        }).done(function (response) {
-                            console.log(response);
-                            $("#output").html(JSON.stringify(response));
-                        }).fail(function (jqXHR, statusText, error) {
-                            console.log("Response Code: " + jqXHR.status + " - Fehlermeldung: " + jqXHR.responseText);
-                            $("#output").html("Ein Fehler ist aufgetreten");
-                        });
-                    });
-                    </script> -->
 
                     </form>
             </div>
-        </div> 
-        <script src="Test.js"></script>
-        <script src="helpers.js"></script>       
+            <script>
+                $("#addall").click(function() {
+                    console.log("button addall clicked");
+                    
+                    var obj = { "bezeichnung": "Lukas Hoffmann", "beschreibung": "hoffmaluaths-albsig.de", "bildpfad": "Lorem Ipsum"};
+                    
+                    $.ajax({
+                        url: "http://localhost:8000/api/download",
+                        method: "post",
+                        contentType: "application/json",
+                        data: JSON.stringify(obj)
+                    }).done(function (response) {
+                        console.log(response);
+                        $("#output").html(JSON.stringify(response));
+                    }).fail(function (jqXHR, statusText, error) {
+                        console.log("Response Code: " + jqXHR.status + " - Fehlermeldung: " + jqXHR.responseText);
+                        $("#output").html("Ein Fehler ist aufgetreten");
+                    });
+                });
+            </script>
+        </div>        
     </body>   
 </html>

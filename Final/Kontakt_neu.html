@@ -33,7 +33,7 @@
             </nav>
             <div class="content">
                 <h1 class="Kontakt_Text">KONTAKTIEREN SIE UNS</h1>
-                    <form class="Formular_Text" id="kontaktformular" name="kontaktformular" action="">
+                    <form class="Formular_Text" id="kontaktformular" name="kontaktformular" action="" onsubmit="postAddress(); return false">
                         
                     <div class="Container_Kontakt">
 
@@ -44,39 +44,21 @@
                         
                         <div>
                             <label class="Formular_Label" for="absender">Ihre E-Mail-Adresse:</label>
-                            <input type="text" id="absender" name="absender" />
+                            <input type="email" id="email" name="email" />
                         </div>
                         <div>
                             <label class="Formular_Label" for="nachricht">Ihre Nachricht:</label>
                             <textarea id="nachricht" name="nachricht" cols="30" rows="5"></textarea>
                         </div>
                         <div>
-                            <input id="addall" class="rechts" type="submit" value="Abschicken" />
+                            <button id="addall" class="rechts" type="submit" value="Abschicken">Abschicken</button>
                         </div>
                     </div>
-
                     </form>
             </div>
-            <script>
-                $("#addall").click(function() {
-                    console.log("button addall clicked");
-                    
-                    var obj = { "bezeichnung": "Lukas Hoffmann", "beschreibung": "hoffmaluaths-albsig.de", "bildpfad": "Lorem Ipsum"};
-                    
-                    $.ajax({
-                        url: "http://localhost:8000/api/download",
-                        method: "post",
-                        contentType: "application/json",
-                        data: JSON.stringify(obj)
-                    }).done(function (response) {
-                        console.log(response);
-                        $("#output").html(JSON.stringify(response));
-                    }).fail(function (jqXHR, statusText, error) {
-                        console.log("Response Code: " + jqXHR.status + " - Fehlermeldung: " + jqXHR.responseText);
-                        $("#output").html("Ein Fehler ist aufgetreten");
-                    });
-                });
-            </script>
-        </div>        
+        </div> 
+            
+           <script src="helpers.js"> </script>
+           <script src="Test.js"> </script> 
     </body>   
 </html>

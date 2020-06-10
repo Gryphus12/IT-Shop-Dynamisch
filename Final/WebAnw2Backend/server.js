@@ -132,6 +132,9 @@ try {
     serviceRouter = require("./services/forumsbereich.js");
     app.use(TOPLEVELPATH, serviceRouter);
 
+    serviceRouter = require("./services/formular.js");
+    app.use(TOPLEVELPATH, serviceRouter);
+
 
 
     serviceRouter = require("./services/filmgenre.js");

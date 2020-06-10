@@ -3,13 +3,13 @@
 function postAddress(){
     const contact = {
         name: document.getElementById('name').value,
-        absender: document.getElementById('absender').value,
+        absender: document.getElementById('email').value,
         nachricht: document.getElementById('nachricht').value
     };
 
     //Adressdaten übertragen
 
-    fetch(baseApiUrl + 'adresse',{
+    fetch(baseApiUrl + 'formular',{
         method: 'POST',
         headers: {
             'Content-Type' : 'application/json',

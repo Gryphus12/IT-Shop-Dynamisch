@@ -3,7 +3,7 @@
 function postAddress(){
     const contact = {
         name: document.getElementById('name').value,
-        absender: document.getElementById('email').value,
+        email: document.getElementById('email').value,
         nachricht: document.getElementById('nachricht').value
     };
 
@@ -20,10 +20,10 @@ function postAddress(){
         response.json().then((json) => {
             if (json.fehler) console.error('Error im backend: ' + json.nachricht);
             else{
-                contact.adresse = {id: json.daten.id};
+                contact.formular = {id: json.daten.id};
                 postAddition(contact);
             }
-        });
+        })
     })
     .catch((err) => {
         console.error('Error while API-Call: ' + err);

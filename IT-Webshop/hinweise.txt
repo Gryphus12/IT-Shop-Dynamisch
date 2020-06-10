@@ -1,0 +1,9 @@
+Annahme: Wir sind als Benutzer die ganze Zeit schon eingeloggt. 
+
+Dynamisiert wurden:
+
+Kontaktformular; Man gibt den Namen ein, eine Email-Adresse (Nur Email Eingabe ist möglich) und die Nachricht.
+Mit Bestätigen, wird dann alles in die Datenbank geschrieben. Von dort soll es dann weitergeleitet werden mithilfe eines kleinen Scripts an unsere Geschäftsemail (dies wurde bisher nicht umgesetzt).
+
+
+Im Warenkorb die Bezahlart; Durch einen Klick auf die Bezahlart, wird die Auswahl in der Datenbank gespeichert. 

@@ -25,32 +25,32 @@ function clearCart(){
 
 // Produkt zum Warenkorb hinzufügen
 
-function addToCart(productId, amount){
+function addToCart(KategorieID, amount){    //Umgeändert von produktID
     const Cart = getCart();
     for (let i = 0; i < cart.items.length; i++){
         let currentItem = cart.items[i];
 
     // Produkt bereits im Warenkorb
 
-    if(currentItem.pid === produktId){
+    if(currentItem.pid === KategorieID){
         cart.Items[i].amount += amount;
         saveCart(cart);
         return;
     }
     }
 
-    cart.items.push({pid: productid, amount: amount});
+    cart.items.push({pid: KategorieID, amount: amount});
 
     saveCart(cart);
 }
 
 // Produkt aus dem Warenkorb entfernen
 
-function removeFromCart(productId){
+function removeFromCart(KategorieID){
     const cart = getCart();
     for (let i = 0; i < cart.items.length; i++){
         let currentItem = cart.items[i];
-        if (currentItem.pid === productId){
+        if (currentItem.pid === KategorieID){
 
             //Element aus dem array löschen
 

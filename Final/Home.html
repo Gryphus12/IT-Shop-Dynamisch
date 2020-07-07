@@ -32,22 +32,24 @@
             </nav>
             <div class="content">
                 <p class="Text">Wir freuen uns, dass Sie den Weg auf unsere Website gefunden haben. <br /> Falls Sie auf der Suche nach IT-Zubehör z.B.: Server, Festplatten, Netzwerkkabel oder Switches sind, dann sind Sie bei uns genau richtig.<br />Wir wünschen Ihnen viel Spaß beim Stöbern. Ihr IT-Shop Team</p>
-                <table class="Home_Tabelle">
+                <div id="product-container">
+                    <table class="Home_Tabelle">
+                
                     <tr>
                         <th>
-                            <a href="Server_Produkt_Seite_neu.html"><img class="image" src="Landing_Page_Bilder/Server1.jpg" width="380" height="380"/></a>
+                            <a href="Server_Produkt_Seite_neu.html"><!--<img class="image" src="Landing_Page_Bilder/Server1.jpg" width="380" height="380"/>--></a>
                             <!-- <img src="../Landing_Page_Bilder/Server1.jpg" width="380" height="380"> -->
                         </th>
                         <th>
-                            <a href="Switch_Produkt_Seite.html"><img class="image" src="Landing_Page_Bilder/RJ45_Switch_Ports.jpg" width="380" height="380"/></a>
+                            <a href="Switch_Produkt_Seite.html"><!--<img class="image" src="Landing_Page_Bilder/RJ45_Switch_Ports.jpg" width="380" height="380"/>--></a>
                             <!-- <img src="../Landing_Page_Bilder/RJ45_Switch_Ports.jpg" width="380" height="380"> -->
                         </th>
                         <th>
-                            <a href="Festplatten_Produkt_Seite.html"><img class="image" src="Landing_Page_Bilder/Festplatte.jpg" width="380" height="380"/></a>
+                            <a href="Festplatten_Produkt_Seite.html"><!--<img class="image" src="Landing_Page_Bilder/Festplatte.jpg" width="380" height="380"/>--></a>
                             <!-- <img src="../Landing_Page_Bilder/Festplatte.jpg" width="380" height="380"> -->
                         </th>
                         <th>
-                            <a href="Netzwerkzubehör_Produkt_Seite.html"><img class="image" src="Landing_Page_Bilder/Netzwerkzubehör.jpg" width="380" height="380"/></a>
+                            <a href="Netzwerkzubehör_Produkt_Seite.html"><!--<img class="image" src="Landing_Page_Bilder/Netzwerkzubehör.jpg" width="380" height="380"/>--></a>
                             <!-- <img src="../Landing_Page_Bilder/Netzwerkzubehör.jpg" width="380" height="380"> -->
                         </th>
                     </tr> 
@@ -66,8 +68,14 @@
                         </td>               
                     </tr>     
                     
-                </table>                
+                </table>  
+            </div>              
             </div>
-        </div>        
+        </div> 
+        <!-- <script src="https://cdnjs.cloudfare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script> -->
+        <script src="helpers.js"></script>
+        <script src="product-loader.js"></script>
+        
+
     </body>   
 </html>

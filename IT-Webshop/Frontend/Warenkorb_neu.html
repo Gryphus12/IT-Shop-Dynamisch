@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="de">
     <head>
         <meta charset="utf-8" />
@@ -11,9 +11,9 @@
     </head>
     <body>
         <div class="wrapper">
-            <header>     
+            <header>
                 Warenkorb
-            </header>  
+            </header>
             <nav>
                 <a href="Home.html" target="blank">Home</a>
                 <div class="dropdown">Shop
@@ -25,24 +25,24 @@
                         <a href="Switch_Produkt_Seite.html">Switches-Shop</a>
                         <a href="Festplatten_Produkt_Seite.html">Festplatten-Shop</a>
                         <a href="Netzwerkzubehör_Produkt_Seite.html">LAN-Kabel-Shop</a>
-                    </div>                            
+                    </div>
                 </div>
                 <a href="Kontakt_neu.html" target="blank">Kontakt</a>
-                <a href="About.html" target="blank">About</a>                
-                <a href="Warenkorb_neu.html" target="blank">Warenkorb(2)</a>       
+                <a href="About.html" target="blank">About</a>
+                <a href="Warenkorb_neu.html" target="blank">Warenkorb</a>
             </nav>
             <div class="content">
             <div class="Box_1">
                 <h1 class="Ueberschriften_Warenkorb">Lieferanschrift</h1>
                 <form class="Formular_Text" id="kontaktformular" name="kontaktformular" action="">
-                        
+
                     <div class="Container_Kontakt">
 
                         <div>
                             <label class="Warenkorb_Label" for="vorname">Vorname:</label>
                             <input type="Liefer" id="vorname" name="vorname" />
                         </div>
-                        
+
                         <div>
                             <label class="Warenkorb_Label" for="Nachname">Nachname:</label>
                             <input type="Liefer" id="Nachname" name="Nachname" />
@@ -67,7 +67,7 @@
                 <div class="mitte">
                     <!-- <a href="http://Paypal.com" target="_blank">   -->
                     <input id="addPaypal" type="zahlen" value="Paypal" />
-                    </a> 
+                    </a>
                 </div>
                 <div class="mitte">
                     <!-- <a href="https://www.americanexpress.com" target="_blank"> -->
@@ -88,24 +88,50 @@
                 <div class="mitte_unten">
                     <input type="zahlen" value="Bestätigen" />
                 </div>
-             
+
             </div>
             <div class="Box_3">
                 <h1 class="Ueberschriften_Warenkorb">Warenkorb</h1>
-                <div>
-                    <img  class="left" src="Landing_Page_Bilder/Festplatte.jpg" width="270" height="190">
-                    <p class="Schrift_Warenkorb">Anzahl: 2</p>
-                    <p class="Schrift_Warenkorb">Preis: 199,99€</p>
-                </div>
+                <table>
+                  <tr>
+                    <th>Artikel</th>
+                    <th>Produktbeschreibung</th>
+                    <th>Anzahl</th>
+                    <th>Preis</th>
+                  </tr>
+
+                  <tr>
+                    <td>1</td>
+                    <td>Produkt weiß</td>
+                    <td><input class="numberinp"></td>
+                    <td>29,99 €</td>
+                  </tr>
+
+                  <tr>
+                    <td>Artikel</td>
+                    <td>Produkt gelb</td>
+                    <td><input class="numberinp"></td>
+                    <td>39,99 €</td>
+                  </tr>
+
+                  <tr rowspan="3">
+                    <td rowspan="3">Gesamtsumme</td>
+                    <td></td>
+                    <td></td>
+                    <td>69,89 €</td>
+                  </tr>
+                </table>
+
+                <button class="buy__btn">Kauf abschließen</button>
                 <div class="mitte_unten_unten">
                     <input type="zahlen" value="Kaufen" />
                 </div>
                 <script>
                 $("#addKredit").click(function() {
                     console.log("button addKredit clicked");
-                    
+
                     var obj = { "bezeichnung": "Kreditkarte"};
-                    
+
                     $.ajax({
                         url: "http://localhost:8000/api/zahlungsart",
                         method: "post",
@@ -122,9 +148,9 @@
 
                 $("#addRechnung").click(function() {
                     console.log("button addRechnung clicked");
-                    
+
                     var obj = { "bezeichnung": "Klarna/Rechnung"};
-                    
+
                     $.ajax({
                         url: "http://localhost:8000/api/zahlungsart",
                         method: "post",
@@ -140,9 +166,9 @@
                 });
                 $("#addPaypal").click(function() {
                     console.log("button addPaypal clicked");
-                    
+
                     var obj = { "bezeichnung": "Paypal"};
-                    
+
                     $.ajax({
                         url: "http://localhost:8000/api/zahlungsart",
                         method: "post",
@@ -158,9 +184,9 @@
                 });
                 $("#addBitcoin").click(function() {
                     console.log("button addBitcoin clicked");
-                    
+
                     var obj = { "bezeichnung": "Bitcoin"};
-                    
+
                     $.ajax({
                         url: "http://localhost:8000/api/zahlungsart",
                         method: "post",
@@ -177,6 +203,6 @@
                 </script>
             </div>
             </div>
-        </div>        
-    </body>   
+        </div>
+    </body>
 </html>

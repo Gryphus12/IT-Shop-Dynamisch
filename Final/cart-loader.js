@@ -9,7 +9,7 @@ cart.items.forEach((cartItem) => {
 });
 
 function getItemFromApi(cartItem){
-  fetch(baseApiUrl + 'produkt/alle/' + cartItem.pid)
+  fetch(baseApiUrl + 'produkt/gib/' + cartItem.pid)
   .then((response) => {
     response.json().then((json) => {
     if(json.fehler) console.error('Error in Backend ' + data.nachricht);

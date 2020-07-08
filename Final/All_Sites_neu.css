@@ -613,6 +613,33 @@ textarea {
 
 
 }
+
+.bild1{
+    position: absolute;
+    left: 0;
+    top: 15%;
+    object-fit:contain;
+    width: 450px;
+    height: 450px;
+}
+
+.content{
+    position: absolute;
+    right: -10%;  
+    top: 15%; 
+}
+
+#amount-select{
+    position: absolute;
+    left: 0;
+    width: 10%;
+}
+
+.inwkbutton{
+    position: absolute;
+    left: 15%;
+}
+
 label{
     text-align: left;
     display: block;

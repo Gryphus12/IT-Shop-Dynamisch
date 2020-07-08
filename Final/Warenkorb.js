@@ -1,63 +1,51 @@
-// Cart im localstorage
-
-function saveCart(cart){
+// Cart im localStorage speichern
+function saveCart(cart) {
     const cartString = JSON.stringify(cart);
     localStorage.setItem('cart', cartString);
 }
 
-// Warenkorb aus dem localstorage auslesen
-
-function getCart(){
+// Warenkorb aus dem localStorage auslesen
+function getCart() {
     let cartString = localStorage.getItem('cart');
 
-    if (cartString === null || cartString.indexOf('undfined') > -1){
-        cartString = '{"Items ":  []}';
+    if (cartString === null || cartString.indexOf('undefined') > -1) {
+        cartString = '{"items": []}';
     }
     return JSON.parse(cartString);
 }
 
 // Warenkorb leeren
-
-function clearCart(){
+function clearCart() {
     localStorage.clear();
 }
 
-
 // Produkt zum Warenkorb hinzufügen
-
-function addToCart(KategorieID, amount){    //Umgeändert von produktID
-    const Cart = getCart();
-    for (let i = 0; i < cart.items.length; i++){
+function addToCart(productId, amount) {
+    const cart = getCart();
+    for (let i = 0; i < cart.items.length; i++) {
         let currentItem = cart.items[i];
-
-    // Produkt bereits im Warenkorb
-
-    if(currentItem.pid === KategorieID){
-        cart.Items[i].amount += amount;
-        saveCart(cart);
-        return;
+        // Produkt bereits im Warenkorb
+        if (currentItem.pid === productId) {
+            cart.items[i].amount += amount;
+            saveCart(cart);
+            return;
+        }
     }
-    }
-
-    cart.items.push({pid: KategorieID, amount: amount});
+    cart.items.push({ pid: productId, amount: amount });
 
     saveCart(cart);
 }
 
 // Produkt aus dem Warenkorb entfernen
-
-function removeFromCart(KategorieID){
+function removeFromCart(productId) {
     const cart = getCart();
-    for (let i = 0; i < cart.items.length; i++){
+    for (let i = 0; i < cart.items.length; i++) {
         let currentItem = cart.items[i];
-        if (currentItem.pid === KategorieID){
-
-            //Element aus dem array löschen
-
+        if (currentItem.pid === productId) {
+            // Element aus dem array löschen
             cart.items.splice(i, 1);
-            break;
+            break; 
         }
     }
-
     saveCart(cart);
 }

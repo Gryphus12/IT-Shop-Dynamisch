@@ -31,8 +31,11 @@
                 <a href="Warenkorb_neu.html" target="blank">Warenkorb</a>      
             </nav>
             <div class="content">
+                <div id="notification">
+                    <span>Erfolgreich dem Warenkorb hinzugefügt.</span>
+                </div>
             <div class="Box_1_Produkt">
-                <img src="Landing_Page_Bilder/Festplatte.jpg" width="540" height="380">
+                <!--<img src="Landing_Page_Bilder/Festplatte.jpg" width="540" height="380">
                 <p>WD Blue HDD Festplatte</p>
                 
 				<div class="dropdown1" style="float: left; padding-left: 19%">
@@ -45,9 +48,12 @@
                         <a href="Festplatten_Produkt_Seite_3.html">3</a>
                         <a href="Festplatten_Produkt_Seite_4.html">4</a>
                     </div>                            
-                </div>
-                <div class="indenwarenkorb"> <input type="warenkorb" value="In den Warenkorb legen"/></div> 
+                </div>-->
+                <div class="row" align="center" id="product-container">
+                     <!--product-loader -->
             </div>
+            
+            <!--
             <div class="Box_2_Produktbeschreibung">
                 <p>Kapazität: 500GB<br>
                 Festplattengeschwindigkeit: 7.2K<br>
@@ -57,8 +63,14 @@
                 Konnektivität: SATA<br>
                 </p><br>
                 <p>39,99* EUR<br>inkl. ges. MwSt. 19%</p>
-            </div>
+            </div>-->
             </div>
         </div>        
     </body>   
+    <script src="helpers.js"></script>
+    <script src="product-loader.js"></script> 
+    <script src="Festplatte.js"></script>  
+    <script src="warenkorb.js"></script>
+    <script src="Test.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
 </html>

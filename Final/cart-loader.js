@@ -55,7 +55,7 @@ function fillPriceArea(){
       <tbody>
       <tr>
         <td>19% MwsT</td>
-        <td>${totalTaxes.toFixed(2)}</td>
+        <td>${totalTaxes.toFixed(2)} €</td>
       </tr>
       </tbody>
     </table>

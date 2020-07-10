@@ -35,7 +35,7 @@ function addProductToPage(product) {
             <div class="content">
                 <h2 class="bez">${product.bezeichnung}</h2>
                 <p class="id">Art-Nr: 1540000${product.id}</p>
-                <p class="preis">${product.bruttopreis}</p>
+                <p class="preis">${product.bruttopreis}€</p>
                 <p class="besch">${product.beschreibung}</p>
                 <p class="details">${product.details}</p>
                 <select id="amount-select"></select>

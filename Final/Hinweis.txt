@@ -1,0 +1,17 @@
+Annahme: Wir sind als Benutzer die ganze Zeit schon eingeloggt. 
+
+Dynamisiert wurde alles:
+
+Kontaktformular; Man gibt den Namen ein, eine Email-Adresse (Nur Email Eingabe ist möglich) und die Nachricht.
+Mit Bestätigen, wird dann alles in die Datenbank geschrieben. Von dort soll es dann weitergeleitet werden mithilfe eines kleinen Scripts an unsere Geschäftsemail (dies wurde bisher nicht umgesetzt).
+
+
+Im Warenkorb die Bezahlart; Durch einen Klick auf die Bezahlart, wird die Auswahl in der Datenbank gespeichert.
+
+Im Warenkorb der Warenkorb selber, in dem die Produkte inkl. Preise und MWSt
+
+Im Warenkorb die Lieferadresse im Grunde, es geht nur nicht, weil der Datenbank die LänderID fehlt und wir diese nicht als Default Wert angeben können.
+
+Auf den Produktseiten werden die Produktbilder und -beschreibungen zu dem Produkt dynamisch aus der Datenbank geladen.
+Wenn mann auf der jeweiligen Produktseite die Anzahl auswählt, wird dies dann gesammelt im Warenkorb angezeigt.
+Die Produkte werden im Warenkorb seperat angezeigt und der Preis wird dann aufsummiert.
